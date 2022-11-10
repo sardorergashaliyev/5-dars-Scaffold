@@ -13,11 +13,13 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       home: Scaffold(
         appBar: AppBar(
-            backgroundColor: Colors.white,
-            title: const Text(
-              'Lesson',
-              style: TextStyle(color: Colors.black),
-            )),
+          backgroundColor: Color.fromARGB(255, 65, 65, 65),
+          title: const Text(
+            'Lesson',
+            style: TextStyle(color: Color.fromARGB(255, 255, 255, 255)),
+          ),
+          leading: Icon(Icons.menu),
+        ),
         floatingActionButton: Container(
             height: 50,
             width: 50,
@@ -31,7 +33,32 @@ class MyApp extends StatelessWidget {
                       spreadRadius: 2,
                       offset: Offset(2, 4))
                 ]),
-            child: const Icon(Icons.youtube_searched_for)),
+            child: const Icon(Icons.add)),
+        bottomNavigationBar: BottomNavigationBar(
+          backgroundColor: Color.fromARGB(255, 65, 65, 65),
+          type: BottomNavigationBarType.fixed,
+          selectedLabelStyle: TextStyle(color: Colors.grey),
+          unselectedLabelStyle: TextStyle(color: Colors.grey),
+          items: const [
+            BottomNavigationBarItem(
+                icon: Icon(
+                  Icons.home,
+                ),
+                label: 'Home'),
+            BottomNavigationBarItem(
+                icon: Icon(
+                  Icons.search,
+                  color: Colors.black,
+                ),
+                label: 'Search'),
+            BottomNavigationBarItem(
+                icon: Icon(
+                  Icons.person,
+                  color: Colors.yellow,
+                ),
+                label: 'Profile'),
+          ],
+        ),
       ),
     );
   }
